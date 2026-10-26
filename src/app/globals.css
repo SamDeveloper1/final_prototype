@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+:root {
+  /* Paperio Color Palette */
+  --color-pearl-bush: #EDE8DF;
+  --color-card-bg: #FAF8F5;
+  --color-ink-black: #131112;
+  --color-dark-grey: #353535;
+  --color-foggy-grey: #CBC8B9;
+  --color-grenadier: #D74108;
+  --color-verified-green: #1E5E41;
+}
+
+body {
+  background-color: var(--color-pearl-bush);
+  color: var(--color-ink-black);
+  font-family: var(--font-body), "Helvetica", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-image: radial-gradient(#CBC8B9 0.75px, transparent 0.75px);
+  background-size: 24px 24px;
+}
+
+/* Typography from Paperio: Ibarra Real Nova & Helvetica/Inter */
+.font-headline,
+.font-brand {
+  font-family: var(--font-headline), "Ibarra Real Nova", "Georgia", serif;
+}
+
+.font-body {
+  font-family: var(--font-body), "Helvetica", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.font-mono-meta {
+  font-family: var(--font-mono), "JetBrains Mono", "Courier New", monospace;
+}
+
+/* Rubber Stamp Styling (Paperio Color Matched) */
+.rubber-stamp {
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  padding: 0.5rem 1.25rem;
+  border-width: 4px;
+  border-style: double;
+  mask-image: radial-gradient(circle at 50% 50%, black 85%, rgba(0, 0, 0, 0.65) 100%);
+  user-select: none;
+}
+
+.rubber-stamp-real {
+  color: var(--color-verified-green);
+  border-color: var(--color-verified-green);
+  background: rgba(30, 94, 65, 0.06);
+}
+
+.rubber-stamp-fake {
+  color: var(--color-grenadier);
+  border-color: var(--color-grenadier);
+  background: rgba(215, 65, 8, 0.07);
+}
+
+.rubber-stamp-safe {
+  color: var(--color-verified-green);
+  border-color: var(--color-verified-green);
+  background: rgba(30, 94, 65, 0.06);
+}
+
+.rubber-stamp-hostile {
+  color: var(--color-grenadier);
+  border-color: var(--color-grenadier);
+  background: rgba(215, 65, 8, 0.07);
+}
+
+/* Custom Scrollbars in Foggy Grey */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #EDE8DF;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBC8B9;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #353535;
+}
