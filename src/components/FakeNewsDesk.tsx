@@ -72,8 +72,12 @@ export const FakeNewsDesk: React.FC = () => {
     setLoading(true);
 
     try {
-      const res = await fetch(`${API_BASE}/api/sample_images/${filename}`);
-      if (!res.ok) throw new Error("Could not fetch sample image from backend.");
+      let res = await fetch(`${API_BASE}/api/sample_images/${filename}`);
+      if (!res.ok) {
+        // Fallback to local static asset in frontend public directory
+        res = await fetch(`/sample_images/${filename}`);
+      }
+      if (!res.ok) throw new Error("Could not fetch sample image.");
       const blob = await res.blob();
       const file = new File([blob], filename, { type: "image/jpeg" });
       handleImageSelect(file);
